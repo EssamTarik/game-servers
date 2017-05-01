@@ -20,6 +20,7 @@ function getServerInfo($id){
 
 function addServer($data){
 	global $pdo;
-	$query = $pdo->prepare('insert into servers set name="?", capacity=?, map="?";');
-	$query->execute(array($data->name, $data->capacity, $$data->map));
+	$query = $pdo->prepare('insert into servers set name=?, capacity=?, map=?;');
+	$query->execute(array($data->name, $data->capacity, $data->map));
+	return "success";
 }
