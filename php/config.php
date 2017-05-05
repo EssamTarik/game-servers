@@ -1,5 +1,6 @@
 <?php
 
+header('Access-Control-Allow-Origin: *');  
 $debugging = true;
 
 if($debugging){
