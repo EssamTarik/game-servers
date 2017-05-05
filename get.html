@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+ //$("#getMessage").on("click", function(){
+      // Only change code below this line.
+      
+        $.getJSON("http://156.221.94.186:8000/getAllServers.php", function(data, status){
+            
+             alert( "Status1: " + status);
+        	
+ });
+// $.getJSON("http://156.221.94.186:8000/getServerInfo.php", function(data, status){
+            
+    //         alert( "Status2: " + status);
+          
+          
+
+ //});
+ // $.getJSON("http://156.221.94.186:8000/index.php",  function(data, status){
+             
+         //    alert( "Status3: " + status);
+          
+          
+// });
+      
+
+    });
+	
+ // });
+</script>
+</head>
+<body>
+
+
+
+
+</body>
+</html>
