@@ -21,3 +21,40 @@ $(document).ready(function(){
       
 });
 
+
+/********************************* sigup validation*************************/
+
+$(document).ready(function(){
+    'use strict';
+    var x=true,y=true,z=true;
+
+    
+   $(".mail,.username").blur(function(){
+      if($(this).val().length==0){
+          $(this).css("border","1px solid red");
+          x=true;
+      } 
+       
+   });
+    
+////////////////////////////// password
+    
+    $(".pass").blur(function(){
+      if($(this).val().length==0 && $(this).val().length < 8 ){
+          $(this).css("border","1px solid red");
+          y=true;
+      } 
+   });
+
+    
+//////////////////////////////////
+    $(".signupform").submit(function(e){
+           
+        if(x===true||y===true||z===true){
+            e.preventDefault(); 
+            $(".mail,.pass,.username").blur();
+        }
+ 
+    });
+
+});
