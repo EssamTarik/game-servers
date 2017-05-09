@@ -13,3 +13,5 @@ if($gameInfo != false){
 }else{
 	writeJson(array('error' => 'game not found'));
 }
+
+//should add get by game id
