@@ -86,6 +86,7 @@
 	                                    	<th>Country</th>
 	                                    	<th>Capacity</th>
 											<th>IP</th>
+											<th>Status</th>
 	                                    </thead>
 	                                    <tbody id="serversTableBody">
 	                                        
@@ -143,12 +144,16 @@
 			var gameName = window.location.href.match(regex)[1];
 			$(document).ready(function(){
 		        $.getJSON(url+"searchByGameName.php?name="+gameName, function(data, status){
-		        	console.log(data);
 		        	var dataHtml = $("#serversTableBody").html();
+		        	var serverStatus = "";
+		        	
 		        	data.servers.map(function(server){
-		        		dataHtml += "<tr><td>"+server.name+"</td><td>"+server.country+"</td><td>"+server.capacity+"</td><td class='text-primary'>"+server.url+"</td></tr>";
-		        	})
+		        		dataHtml += "<tr id='server"+server.id+"'><td>"+server.name+"</td><td>"+server.country+"</td><td>"+server.capacity+"</td><td class='text-primary'>"+server.url+"</td><td>"+serverStatus+"</td></tr>";
 
+		        		$.get("http://" + server.url, function(serverData, serverStatus){
+		        			console.log(status);
+		        		});
+		        	});
 		        	$("#serversTableBody").html(dataHtml);
 		        	$("#gameName").text(data.info.name);
 		        });
