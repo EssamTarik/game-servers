@@ -148,10 +148,10 @@
 		        	var serverStatus = "";
 		        	
 		        	data.servers.map(function(server){
-		        		dataHtml += "<tr id='server"+server.id+"'><td>"+server.name+"</td><td>"+server.country+"</td><td>"+server.capacity+"</td><td class='text-primary'>"+server.url+"</td><td>"+serverStatus+"</td></tr>";
+		        		dataHtml += "<tr><td>"+server.name+"</td><td>"+server.country+"</td><td>"+server.capacity+"</td><td class='text-primary'>"+server.url+"</td><td id='server"+server.id+"status'>"+serverStatus+"</td></tr>";
 
-		        		$.get("http://" + server.url, function(serverData, serverStatus){
-		        			console.log(status);
+		        		$.get(url + "checkServerAvailability.php?url=" + server.url, function(serverData, serverStatus){
+		        			$("#server"+server.id+"status").text(serverData)
 		        		});
 		        	});
 		        	$("#serversTableBody").html(dataHtml);
