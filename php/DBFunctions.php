@@ -44,3 +44,15 @@ function findGameByName($name){
 	}
 	return $results;
 }
+
+function findGameById($id){
+	global $pdo;
+	$query = $pdo->prepare("select * from games where id = ?;");
+	$query->execute(array($id));
+	try{
+		$results = $query->fetchAll(PDO::FETCH_ASSOC)[0];
+	}catch(Exception $e){
+		$results = false;
+	}
+	return $results;
+}
