@@ -26,27 +26,36 @@
                     <li><a href="Home.html">Home</a></li>
                     <li><a href="News.html">News</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="Login.html">Login</a></li>
                 </ul>
             </div>
             <div class="container-fluid">
                 <div class="row ">
                     <div class="col-md-4 contact fadeInLeft">
-                        <h1>Lorem ipsum dolor </h1>
-                        <p>Lorem ipsum dolor sit amet, ut sea quas definiebas. Pro dolor inimicus consectetuer in. Perfecto accusata sea cu, vocent erroribus est in. Ludus definitionem pro cu, mea choro latine aeterno ea,<br/> possim vocibus accusam ex eos. Has te assum adversarium, ex nam invidunt comprehensam.</p>
+                        <h1>Always happy to hear from you</h1>
+                        <!-- <p>Lorem ipsum dolor sit amet, ut sea quas definiebas. Pro dolor inimicus consectetuer in. Perfecto accusata sea cu, vocent erroribus est in. Ludus definitionem pro cu, mea choro latine aeterno ea,<br/> possim vocibus accusam ex eos. Has te assum adversarium, ex nam invidunt comprehensam.</p> -->
                     </div>
 
                     <div class="col-md-8 contact">
-                        <input type="email" class="form-control"  placeholder="Email">
-                        <input type="textarea" class="form-control" placeholder="Message...">
-                        <button type="submit" class="btn btn-defualt">Submit</button>
+                        <input id="email" type="email" class="form-control"  placeholder="Email">
+                        <input id="message" type="textarea" class="form-control" placeholder="Message...">
+                        <button id="submitbutton"  type="submit" class="btn btn-defualt">Submit</button>
                     </div>
                 </div>
             </div>
         </div>
+
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/custom.js"></script>
+        <script type="text/javascript">
+            $("#submitbutton").click(function(){
+                var email = $("#email").val();
+                var message = $("#message").val();
+                $.get('http://localhost:8000/contact.php?email='+email+"&message="+message);
+                alert('thanks for contacting us');
+                window.location.href = "Home.html";
+            })
+        </script>
     </body>
       
 </html>

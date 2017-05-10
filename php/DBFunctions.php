@@ -56,3 +56,11 @@ function findGameById($id){
 	}
 	return $results;
 }
+
+
+function addContactMessage($email, $message){
+	global $pdo;
+	$query = $pdo->prepare("insert into contact set email=?, message=?;");
+	$query->execute(array($email, $message));
+	return true;
+}
