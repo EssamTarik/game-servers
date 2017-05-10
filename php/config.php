@@ -1,7 +1,7 @@
 <?php
 
 header('Access-Control-Allow-Origin: *');  
-$debugging = true;
+$debugging = false;
 
 if($debugging){
 	error_reporting(E_ALL);
