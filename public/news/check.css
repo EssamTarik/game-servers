@@ -1,0 +1,25 @@
+body{
+  margin-top:60p;
+  background-color:black;
+  color:white;
+}
+.container{
+  margin-top:60px;
+   background-color:black;
+  
+}
+
+h1{
+   font-family:'Tangerine', serif;
+   font-size:90px;
+}
+.img-responsive{
+  margin: 0 auto;
+}
+#quote{
+  font-family:'Tangerine', serif;
+   font-size:40px;
+}
+#wiki{
+  font-size:25px;
+}
